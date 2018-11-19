@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 import uid from 'uid'
 import Input from './Input'
-import Todo from './Todo'
-import Separator from './Separator'
-import ProgressBar from './ProgressBar'
+import Todo from './Todo-old'
+import Separator from './Separator-old'
+import ProgressBar from './ProgressBar-old'
 
 import styled from 'styled-components'
 
@@ -15,12 +15,12 @@ export const Wrapper = styled.section`
 
 export default class Home extends Component {
   state = {
-    todos: this.load(),
+    todos: this.load()
   }
 
   addTodo = text => {
     this.setState({
-      todos: [{ text, done: false, id: uid() }, ...this.state.todos],
+      todos: [{ text, done: false, id: uid() }, ...this.state.todos]
     })
   }
 
@@ -33,8 +33,8 @@ export default class Home extends Component {
       todos: [
         ...todos.slice(0, index),
         { ...todo, done: !todo.done },
-        ...todos.slice(index + 1),
-      ],
+        ...todos.slice(index + 1)
+      ]
     })
   }
 
@@ -43,7 +43,7 @@ export default class Home extends Component {
     const index = todos.findIndex(todo => todo.id === id)
 
     this.setState({
-      todos: [...todos.slice(0, index), ...todos.slice(index + 1)],
+      todos: [...todos.slice(0, index), ...todos.slice(index + 1)]
     })
   }
 
@@ -104,3 +104,4 @@ export default class Home extends Component {
     }
   }
 }
+*/

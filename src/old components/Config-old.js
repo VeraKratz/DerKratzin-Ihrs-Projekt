@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import ToggleButton from './ToggleButton'
+/*import React, { Component } from 'react'
+import ToggleButton from './ToggleButton-old'
 
 export default class Config extends Component {
   render() {
@@ -17,4 +17,4 @@ export default class Config extends Component {
       </section>
     )
   }
-}
+}*/

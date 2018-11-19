@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+/*import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
@@ -14,6 +14,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: darkslategray;
 }
-`
+`*/

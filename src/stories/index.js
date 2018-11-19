@@ -3,17 +3,16 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { text, boolean, number } from '@storybook/addon-knobs'
+import Card from '../components/Card'
+//import StyleBox from './StyleBox'
 
-import Todo from '../components/Todo'
-import Button from '../components/Button'
-import Input from '../components/Input'
-import ProgressBar from '../components/ProgressBar'
-import Separator from '../components/Separator'
-import ToggleButton from '../components/ToggleButton'
+storiesOf('Card', module).add('default', () => (
+  <React.Fragment>
+    <Card>{text('Label', 'Hello world')}</Card>
+  </React.Fragment>
+))
 
-import StyleBox from './StyleBox'
-
-storiesOf('Todo', module).add('default', () => (
+/*storiesOf('Todo', module).add('default', () => (
   <React.Fragment>
     <Todo
       text={text('Todo 1: text', 'Hello world')}
@@ -50,7 +49,7 @@ storiesOf('ProgressBar', module).add('default', () => (
         range: true,
         min: 0,
         max: 1,
-        step: 0.01,
+        step: 0.01
       })}
     />
     <StyleBox h={40} />
@@ -81,4 +80,4 @@ storiesOf('ToggleButton', module).add('default', () => (
       alternativeText={text('alternativeText', 'I was clicked')}
     />
   </React.Fragment>
-))
+))*/

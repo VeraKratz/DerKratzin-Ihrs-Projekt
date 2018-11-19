@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/*import React, { Component } from 'react'
 
 export default class Input extends Component {
   handleKeyUp = event => {
@@ -14,3 +14,4 @@ export default class Input extends Component {
     return <input onKeyUp={this.handleKeyUp} placeholder="Add to-do" />
   }
 }
+*/

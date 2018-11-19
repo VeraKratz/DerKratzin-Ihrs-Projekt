@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+/*import styled from 'styled-components'
 
 export default styled.div`
   background: cornflowerblue;
@@ -12,4 +12,4 @@ export default styled.div`
     background: deeppink;
     transition: width 0.3s ease;
   }
-`
+*/

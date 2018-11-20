@@ -17,4 +17,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+img{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+}
 `

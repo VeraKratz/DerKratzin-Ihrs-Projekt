@@ -19,11 +19,12 @@ const StyledCard = styled.div`
     'contact .';
 `
 
-const UserImage = styled.div`
+const UserImage = styled.img`
   grid-area: image;
 `
 const NameArea = styled.div`
   grid-area: name;
+  margin-right: auto;
 `
 const AboutArea = styled.div`
   grid-area: about;
@@ -51,7 +52,10 @@ export default class Card extends Component {
 
     return (
       <StyledCard>
-        <UserImage>userimage</UserImage>
+        <UserImage
+          src="https://images.unsplash.com/photo-1500561607578-e542f3149b97?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f82f44e65cb4765da10c3d7f0a85e7cc&auto=format&fit=crop&w=2734&q=80"
+          alt="random"
+        />
         <NameArea>
           <div>{user.firstName}</div>
           <div>{user.lastName}</div>

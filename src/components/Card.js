@@ -21,6 +21,9 @@ const StyledCard = styled.div`
 
 const UserImage = styled.img`
   grid-area: image;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 `
 const NameArea = styled.div`
   grid-area: name;

@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export default createGlobalStyle`
 
 * {
-  /*box-sizing: border-box;*/
-  box-sizing: content-box;
+  box-sizing: border-box; 
 }
 
 body {
@@ -16,11 +15,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-img{
-  width:100px;
-  height:100px;
-  object-fit:cover;
 }
 `

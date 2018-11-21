@@ -42,17 +42,6 @@ const Contact = styled.div`
 
 export default class Card extends Component {
   render() {
-    const user = {
-      firstName: 'Vera',
-      lastName: 'Kratz',
-      age: 'age 34',
-      gender: 'female',
-      dateOfExam: '13.12.2018',
-      about:
-        'Of course he is a happy little stone, cause we dont have any other kind. Once you learn the technique, ohhh! Turn you loose on the world; you become a tiger. There comes a nice little fluffer. Maybe he has a little friend that lives right over here. I thought today we would make a happy little stream that is just running through the woods here.',
-      contact: 'mail me @ HabeDieEhre@Servus.com'
-    }
-
     return (
       <StyledCard>
         <UserImage
@@ -60,14 +49,14 @@ export default class Card extends Component {
           alt="random"
         />
         <NameArea>
-          <div>{user.firstName}</div>
-          <div>{user.lastName}</div>
+          <div>{this.props.user.firstName}</div>
+          <div>{this.props.user.lastName}</div>
         </NameArea>
-        <span>{user.age}</span>
-        <span>{user.gender}</span>
-        <DateOfExam>{user.dateOfExam}</DateOfExam>
-        <AboutArea>{user.about}</AboutArea>
-        <Contact>{user.contact}</Contact>
+        <span>{this.props.user.age}</span>
+        <span>{this.props.user.gender}</span>
+        <DateOfExam>{this.props.user.dateOfExam}</DateOfExam>
+        <AboutArea>{this.props.user.about}</AboutArea>
+        <Contact>{this.props.user.contact}</Contact>
       </StyledCard>
     )
   }

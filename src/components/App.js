@@ -34,18 +34,19 @@ export default class App extends Component {
         about:
           'Of course he is a happy little stone, cause we dont have any other kind. Once you learn the technique, ohhh! Turn you loose on the world; you become a tiger. There comes a nice little fluffer. Maybe he has a little friend that lives right over here. I thought today we would make a happy little stream that is just running through the woods here.',
         contact: 'mail me @ HabeDieEhre@Servus.com'
+      },
+
+      {
+        firstName: 'Donald',
+        lastName: 'Duck',
+        age: 'age 55',
+        gender: 'male',
+        dateOfExam: '13.12.2018',
+        about:
+          'Of course he is a happy little stone, cause we dont have any other kind. Once you learn the technique, ohhh! Turn you loose on the world; you become a tiger. There comes a nice little fluffer. Maybe he has a little friend that lives right over here. I thought today we would make a happy little stream that is just running through the woods here.',
+        contact: 'mail me @ HabeDieEhre@Servus.com'
       }
-    ],
-    user: {
-      firstName: 'Donald',
-      lastName: 'Duck',
-      age: 'age 55',
-      gender: 'male',
-      dateOfExam: '13.12.2018',
-      about:
-        'Of course he is a happy little stone, cause we dont have any other kind. Once you learn the technique, ohhh! Turn you loose on the world; you become a tiger. There comes a nice little fluffer. Maybe he has a little friend that lives right over here. I thought today we would make a happy little stream that is just running through the woods here.',
-      contact: 'mail me @ HabeDieEhre@Servus.com'
-    }
+    ]
   }
 
   handleClick(newUser) {
@@ -68,8 +69,21 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Card user={this.state.user} />
         <Form newCard={user => this.handleClick(user)} />
+        {/* <Card user={this.state.user} /> */}
+        <div>
+          {this.state.personData.map(user => (
+            <Card
+              firstName={user.firstName}
+              lastName={user.latstName}
+              age={user.age}
+              gender={user.gender}
+              dateOfExam={user.dateOfExam}
+              about={user.about}
+              contact={user.contact}
+            />
+          ))}
+        </div>
       </div>
     )
   }

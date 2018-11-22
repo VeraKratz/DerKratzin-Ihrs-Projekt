@@ -49,14 +49,14 @@ export default class Card extends Component {
           alt="random"
         />
         <NameArea>
-          <div>{this.props.user.firstName}</div>
-          <div>{this.props.user.lastName}</div>
+          <div>{this.props.firstName}</div>
+          <div>{this.props.lastName}</div>
         </NameArea>
-        <span>{this.props.user.age}</span>
-        <span>{this.props.user.gender}</span>
-        <DateOfExam>{this.props.user.dateOfExam}</DateOfExam>
-        <AboutArea>{this.props.user.about}</AboutArea>
-        <Contact>{this.props.user.contact}</Contact>
+        <span>{this.props.age}</span>
+        <span>{this.props.gender}</span>
+        <DateOfExam>{this.props.dateOfExam}</DateOfExam>
+        <AboutArea>{this.props.about}</AboutArea>
+        <Contact>{this.props.contact}</Contact>
       </StyledCard>
     )
   }

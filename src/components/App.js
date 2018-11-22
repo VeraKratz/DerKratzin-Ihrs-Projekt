@@ -50,7 +50,7 @@ export default class App extends Component {
   }
 
   handleClick(newUser) {
-    this.setState({ user: newUser })
+    this.setState({ personData: [...this.state.personData, newUser] })
   }
 
   // handleClick = event => {
@@ -75,7 +75,7 @@ export default class App extends Component {
           {this.state.personData.map(user => (
             <Card
               firstName={user.firstName}
-              lastName={user.latstName}
+              lastName={user.lastName}
               age={user.age}
               gender={user.gender}
               dateOfExam={user.dateOfExam}

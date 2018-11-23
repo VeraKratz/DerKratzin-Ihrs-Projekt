@@ -50,7 +50,7 @@ export default class App extends Component {
   }
 
   handleClick(newUser) {
-    this.setState({ personData: [...this.state.personData, newUser] })
+    this.setState({ personData: [newUser, ...this.state.personData] })
   }
 
   // handleClick = event => {

@@ -7,18 +7,9 @@ export default class App extends Component {
     personData: []
   }
 
-  handleClick(newUser) {
+  addUser = newUser => {
     this.setState({ personData: [newUser, ...this.state.personData] })
   }
-
-  // handleClick = event => {
-  //   event.preventDefault()
-  //   const input = event.target.value
-  //   console.log(input)
-
-  //   input.value = ''
-  //   input.focus()
-  // }
 
   renderPersonData() {
     return this.state.personData
@@ -27,8 +18,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Form newCard={user => this.handleClick(user)} />
-        {/* <Card user={this.state.user} /> */}
+        <Form newCard={user => this.addUser(user)} />
+
         <div>
           {this.state.personData.map(user => (
             <Card

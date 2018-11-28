@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Card from './Card'
 import Form from './Form'
+import Toolbar from './Toolbar'
 
 export default class App extends Component {
   state = {
@@ -18,6 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <Toolbar />
         <Form newCard={user => this.addUser(user)} />
 
         <div>

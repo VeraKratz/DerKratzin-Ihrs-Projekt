@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+/**import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
@@ -17,3 +17,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 `
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+

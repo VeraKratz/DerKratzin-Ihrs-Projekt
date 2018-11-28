@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Card from './Card'
 import Form from './Form'
-import Toolbar from './Toolbar'
+import Menu from './Menu'
 
 export default class App extends Component {
   state = {
@@ -19,9 +19,10 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Toolbar />
+        <div>
+          <Menu />
+        </div>
         <Form newCard={user => this.addUser(user)} />
-
         <div>
           {this.state.personData.map(user => (
             <Card

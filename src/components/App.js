@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
-import Card from './Card'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import styled from 'styled-components'
+
+import Home from './Home'
+import Cards from './Card'
 import Form from './Form'
-import Menu from './Menu'
-import logo from './logo.png'
+
+const Wrapper = styled.div`
+  background-color: green;
+`
+
+const NavBar = styled.nav`
+  background: red;
+`
+const StyledNavLink = styled(NavLink)`
+  margin-right: 20px;
+`
 
 export default class App extends Component {
   state = {
@@ -26,25 +39,32 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <Menu links={links} />
-        </div>
-        <Form newCard={user => this.addUser(user)} />
-        <div>
-          {this.state.personData.map(user => (
-            <Card
-              firstName={user.firstName}
-              lastName={user.lastName}
-              age={user.age}
-              gender={user.gender}
-              dateOfExam={user.dateOfExam}
-              about={user.about}
-              contact={user.contact}
-            />
-          ))}
-        </div>
-      </div>
+      <Router>
+        <Wrapper>
+          <NavBar>
+            <StyledNavLink exact to="/">
+              home
+            </StyledNavLink>
+            <StyledNavLink exact to="/form">
+              form
+            </StyledNavLink>
+            <StyledNavLink exact to="/cards">
+              cards
+            </StyledNavLink>
+          </NavBar>
+          <Route exact path="/" render={() => <Home />} />
+          <Route
+            exact
+            path="/form"
+            render={() => <Form newCard={user => this.addUser(user)} />}
+          />
+          <Route
+            exact
+            path="/cards"
+            render={() => <Cards allUsers={this.state.personData} />}
+          />
+        </Wrapper>
+      </Router>
     )
   }
 }

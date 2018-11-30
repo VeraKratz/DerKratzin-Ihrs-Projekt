@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 export default class Form extends Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    onClick: PropTypes.func.isRequired,
-    placeholder: PropTypes.string
-  }
-
   state = {
     user: {
       firstName: '',

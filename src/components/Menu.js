@@ -1,41 +1,35 @@
 import React, { Component } from 'react'
-import logo from './logo.png'
 import searchIcon from './search-icon.png'
 
+
+
+
+
+
+
 export default class Menu extends Component {
-  render() {
+  render() 
+ let linksMarkup = {this.props.links.map(link,index) =>{
+   
+  return(
+    {
+    <li className="menu__list-item"><a className="menu__link menu__" href={link}{link.label}</a></li>
+          
+})
+
+
     return (
       <div className="container center">
         <nav className="menu">
           <h1
-            style={{ backgroundImage: 'url(' + logo + ')' }}
+            style={{ backgroundImage: 'url(' + this.props.logo + ')' }}
             className="menu__logo"
-          >
-            Prüsse-App
+        Prüsse-App
           </h1>
 
           <div className="menu__right">
             <ul className="menu__list">
-              <li className="menu__list-item">
-                <a className="menu__link menu__link--active" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="menu__list-item">
-                <a className="menu__link" href="#">
-                  About
-                </a>
-              </li>
-              <li className="menu__list-item">
-                <a className="menu__link" href="#">
-                  Portfolio
-                </a>
-              </li>
-              <li className="menu__list-item">
-                <a className="menu__link" href="#">
-                  Contact
-                </a>
-              </li>
+              {linksMarkup}
             </ul>
 
             <button
@@ -53,5 +47,5 @@ export default class Menu extends Component {
         </nav>
       </div>
     )
-  }
-}
+  
+

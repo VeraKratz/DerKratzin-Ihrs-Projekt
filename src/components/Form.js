@@ -1,4 +1,18 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+
+const Wrapper = styled.section`
+  display: grid;
+  grid-gap: 10px;
+  margin: 15px 10px;
+
+  input {
+    border-radius: 5px;
+  }
+  button {
+    background: peachpuff;
+  }
+`
 
 export default class Form extends Component {
   state = {
@@ -45,7 +59,7 @@ export default class Form extends Component {
 
   render() {
     return (
-      <section>
+      <Wrapper>
         <input
           ref={this.firstName}
           name="firstName"
@@ -89,7 +103,7 @@ export default class Form extends Component {
           onChange={this.updateInput}
         />
         <button onClick={this.handleSubmit}>submit</button>
-      </section>
+      </Wrapper>
     )
   }
 }

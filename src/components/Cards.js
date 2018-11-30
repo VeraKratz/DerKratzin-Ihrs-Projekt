@@ -3,10 +3,12 @@ import Card from './Card'
 
 export default class Cards extends Component {
   render() {
+    console.log('personData: ' + this.props.allUsers)
     return (
       <div>
-        {this.propsallUsers.map(user => (
+        {this.props.allUsers.map((user, index) => (
           <Card
+            key={index}
             firstName={user.firstName}
             lastName={user.lastName}
             age={user.age}

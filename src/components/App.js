@@ -3,19 +3,24 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 import Home from './Home'
-import Cards from './Card'
+import Cards from './Cards'
 import Form from './Form'
 
-const Wrapper = styled.div`
-  background-color: green;
-`
+const Wrapper = styled.div``
 
 const NavBar = styled.nav`
-  background: red;
+  background-color: white;
+  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: relative;
 `
-const StyledNavLink = styled(NavLink)`
-  margin-right: 20px;
-`
+
+const StyledNavLink = styled(NavLink)``
 
 export default class App extends Component {
   state = {

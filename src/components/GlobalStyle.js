@@ -2,11 +2,14 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
 
+@import url('https://fonts.googleapis.com/css?family=Text+Me+One');
+
 * {
   box-sizing: border-box; 
 }
 
 body {
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-image: url('https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7dc310134cdefd68cbb1fc7c6ab2049d&auto=format&fit=crop&w=1500&q=80');
@@ -17,6 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 p {
-  font-size: 50px;
+  font-size: 16px;
 }
 `

@@ -6,21 +6,31 @@ import Home from './Home'
 import Cards from './Cards'
 import Form from './Form'
 
+const LogoImage = styled.img`
+  height: 85px;
+`
 const Wrapper = styled.div``
 
 const NavBar = styled.nav`
-  background-color: white;
+  background-color: #ebe5e1;
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  height: 80px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 0 40px;
   position: relative;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  font-family: 'Text Me One', sans-serif;
 `
 
-const StyledNavLink = styled(NavLink)``
+const StyledNavLink = styled(NavLink)`
+  margin-right: 10px;
+  text-decoration: overline;
+  color: #4460a9;
+  text-decoration-color: #d03d3d;
+  &.active {
+    color: #d03d3d;
+  }
+`
 
 export default class App extends Component {
   state = {
@@ -47,14 +57,15 @@ export default class App extends Component {
       <Router>
         <Wrapper>
           <NavBar>
+            <LogoImage src="../../img/logo1.png" />
             <StyledNavLink exact to="/">
-              home
+              HOME
             </StyledNavLink>
             <StyledNavLink exact to="/form">
-              form
+              ANMELDUNG
             </StyledNavLink>
             <StyledNavLink exact to="/cards">
-              cards
+              SEGLER
             </StyledNavLink>
           </NavBar>
           <Route exact path="/" render={() => <Home />} />

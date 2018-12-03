@@ -41,10 +41,7 @@ export default class Card extends Component {
   render() {
     return (
       <StyledCard>
-        <UserImage
-          src="https://images.unsplash.com/photo-1500561607578-e542f3149b97?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f82f44e65cb4765da10c3d7f0a85e7cc&auto=format&fit=crop&w=2734&q=80"
-          alt="random"
-        />
+        <UserImage src={this.props.image} alt="random" />
         <NameArea>
           <div>{this.props.firstName}</div>
           <div>{this.props.lastName}</div>

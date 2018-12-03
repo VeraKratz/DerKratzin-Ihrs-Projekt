@@ -8,14 +8,14 @@ export default class Cards extends Component {
       <div>
         {this.props.allUsers.map((user, index) => (
           <Card
+            image={user.image}
             key={index}
             firstName={user.firstName}
             lastName={user.lastName}
             age={user.age}
             gender={user.gender}
-            dateOfExam={user.dateOfExam}
-            about={user.about}
             contact={user.contact}
+            about={user.about}
           />
         ))}
       </div>

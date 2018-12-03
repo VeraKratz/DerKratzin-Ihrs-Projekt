@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const SectionLayout = styled.section`
   display: flex;
   align-items: center;
+  grid-row-start: 2;
 `
 
 const Wrapper = styled.div`

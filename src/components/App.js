@@ -9,7 +9,10 @@ import Form from './Form'
 const LogoImage = styled.img`
   height: 85px;
 `
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+`
 
 const NavBar = styled.nav`
   background-color: #ebe5e1;

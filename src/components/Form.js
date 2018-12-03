@@ -1,16 +1,27 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Textarea from 'react-textarea-autosize'
+
+const StyledTextarea = styled(Textarea)`
+  min-height: 100px;
+`
 
 const Wrapper = styled.section`
   display: grid;
-  grid-gap: 10px;
-  margin: 15px 10px;
+  grid-gap: 25px;
+  margin: 70px 20px;
 
   input {
     border-radius: 5px;
+    padding: 5px;
   }
   button {
-    background: peachpuff;
+    height: 50px;
+    background: #395e93;
+    color: white;
+    font-size: 17px;
+    border-radius: 4px;
+    border: 0;
   }
 `
 
@@ -21,7 +32,7 @@ export default class Form extends Component {
       lastName: '',
       age: '',
       gender: '',
-      dateOfExam: '',
+      //dateOfExam: '',
       about: '',
       contact: ''
     }
@@ -31,7 +42,7 @@ export default class Form extends Component {
   lastName = React.createRef()
   age = React.createRef()
   gender = React.createRef()
-  dateOfExam = React.createRef()
+  //dateOfExam = React.createRef()
   about = React.createRef()
   contact = React.createRef()
 
@@ -50,7 +61,7 @@ export default class Form extends Component {
     this.lastName.current.value = ''
     this.age.current.value = ''
     this.gender.current.value = ''
-    this.dateOfExam.current.value = ''
+    //this.dateOfExam.current.value = ''
     this.about.current.value = ''
     this.contact.current.value = ''
 
@@ -63,46 +74,41 @@ export default class Form extends Component {
         <input
           ref={this.firstName}
           name="firstName"
-          placeholder="first name"
+          placeholder="Vorname"
           onChange={this.updateInput}
         />
         <input
           ref={this.lastName}
           name="lastName"
-          placeholder="last name"
+          placeholder="Nachname"
           onChange={this.updateInput}
         />
         <input
           ref={this.age}
           name="age"
-          placeholder="age"
+          placeholder="Alter"
           onChange={this.updateInput}
         />
         <input
           ref={this.gender}
           name="gender"
-          placeholder="gender"
+          placeholder="Geschlecht"
           onChange={this.updateInput}
         />
-        <input
-          ref={this.dateOfExam}
-          name="dateOfExam"
-          placeholder="dateOfExam"
-          onChange={this.updateInput}
-        />
-        <input
-          ref={this.about}
-          name="about"
-          placeholder="about me"
-          onChange={this.updateInput}
-        />
+
         <input
           ref={this.contact}
           name="contact"
-          placeholder="insert mailadress"
+          placeholder="Trage hier bitte deine Mailadresse ein"
           onChange={this.updateInput}
         />
-        <button onClick={this.handleSubmit}>submit</button>
+        <StyledTextarea
+          ref={this.about}
+          name="about"
+          placeholder="Erzähl hier was über dich"
+          onChange={this.updateInput}
+        />
+        <button onClick={this.handleSubmit}>Anlegen</button>
       </Wrapper>
     )
   }

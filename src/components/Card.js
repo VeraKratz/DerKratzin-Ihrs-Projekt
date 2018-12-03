@@ -3,17 +3,17 @@ import styled from 'styled-components'
 
 const StyledCard = styled.div`
   height: 350px;
-  margin: 5px;
-  background: #d4dde2a1;
-  border-radius: 20px;
-  padding: 15px;
+  margin: 23px;
+  background: white;
+  box-shadow: 0 8px 16px rgba(0, 40, 100, 0.4);
+  border-radius: 4px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
   grid-template-areas:
     'image name'
-    '. .'
     '. .'
     'about about'
     'contact .';
@@ -24,6 +24,7 @@ const UserImage = styled.img`
   width: 100px;
   height: 100px;
   object-fit: cover;
+  border-radius: 4px 4px 0 0;
 `
 const NameArea = styled.div`
   grid-area: name;
@@ -31,10 +32,6 @@ const NameArea = styled.div`
 `
 const AboutArea = styled.div`
   grid-area: about;
-`
-
-const DateOfExam = styled.div`
-  grid-column: span 2;
 `
 const Contact = styled.div`
   grid-area: contact;
@@ -54,7 +51,6 @@ export default class Card extends Component {
         </NameArea>
         <span>{this.props.age}</span>
         <span>{this.props.gender}</span>
-        <DateOfExam>{this.props.dateOfExam}</DateOfExam>
         <AboutArea>{this.props.about}</AboutArea>
         <Contact>{this.props.contact}</Contact>
       </StyledCard>

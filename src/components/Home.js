@@ -11,6 +11,8 @@ const Wrapper = styled.div`
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
   padding: 0 40px;
   position: relative;
+  margin: 23px;
+  border-radius: 4px;
 `
 
 export default class Home extends Component {
@@ -18,6 +20,7 @@ export default class Home extends Component {
     return (
       <SectionLayout>
         <Wrapper>
+          <h1> Über die Prüsse-App </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati
             distinctio magni deleniti eaque at nemo magnam aspernatur aut?

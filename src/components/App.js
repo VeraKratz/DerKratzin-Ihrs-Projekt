@@ -37,20 +37,33 @@ const StyledNavLink = styled(NavLink)`
 
 export default class App extends Component {
   state = {
-    personData: sailors
+    personData: this.load()
+  }
+  save() {
+    localStorage.setItem(
+      'prüsse-app-sailors',
+      JSON.stringify(this.state.personData)
+    )
   }
 
-  saveToLocalStorage() {}
+  load() {
+    try {
+      return JSON.parse(localStorage.getItem('prüsse-app-sailors')) || sailors
+    } catch (err) {
+      return []
+    }
+  }
 
   addUser = newUser => {
     this.setState({ personData: [newUser, ...this.state.personData] })
   }
 
-  renderPersonData() {
+  renderPersonData = () => {
     return this.state.personData
   }
 
   render() {
+    this.save()
     return (
       <Router>
         <Wrapper>

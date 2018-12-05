@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
+import Bookmark from './Bookmark'
 const StyledCard = styled.div`
   height: 350px;
   margin: 23px;
@@ -41,6 +41,7 @@ export default class Card extends Component {
   render() {
     return (
       <StyledCard>
+        <Bookmark handleOnClick={this.props.handleBookmark} />
         <UserImage src={this.props.image} alt="random" />
         <NameArea>
           <div>{this.props.firstName}</div>

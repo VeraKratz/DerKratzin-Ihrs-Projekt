@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import sailors from '../sailors.json'
 import Home from './Home'
 import Cards from './Cards'
 import Form from './Form'
+import sailors from '../data/sailors'
 
 const LogoImage = styled.img`
   height: 85px;
@@ -37,12 +37,12 @@ const StyledNavLink = styled(NavLink)`
 
 export default class App extends Component {
   state = {
-    personData: this.load()
+    personDatas: this.load()
   }
   save() {
     localStorage.setItem(
       'prüsse-app-sailors',
-      JSON.stringify(this.state.personData)
+      JSON.stringify(this.state.personDatas)
     )
   }
 
@@ -55,11 +55,26 @@ export default class App extends Component {
   }
 
   addUser = newUser => {
-    this.setState({ personData: [newUser, ...this.state.personData] })
+    this.setState({ personDatas: [newUser, ...this.state.personDatas] })
   }
 
   renderPersonData = () => {
-    return this.state.personData
+    return this.state.personDatas
+  }
+
+  toggleBookmark = id => {
+    const { personDatas } = this.state
+    const index = personDatas.findIndex(person => person.userId === id)
+    console.log(index)
+    const toggleDone = [
+      ...personDatas.slice(0, index),
+      { ...personDatas[index], marked: !personDatas[index].marked },
+      ...personDatas.slice(index + 1)
+    ]
+
+    this.setState({
+      personDatas: toggleDone
+    })
   }
 
   render() {
@@ -78,6 +93,9 @@ export default class App extends Component {
             <StyledNavLink exact to="/cards">
               SEGLER
             </StyledNavLink>
+            <StyledNavLink exact to="/marked">
+              Meine Kontakte
+            </StyledNavLink>
           </NavBar>
           <Route exact path="/" render={() => <Home />} />
           <Route
@@ -88,7 +106,24 @@ export default class App extends Component {
           <Route
             exact
             path="/cards"
-            render={() => <Cards allUsers={this.state.personData} />}
+            render={() => (
+              <Cards
+                bookmark={id => this.toggleBookmark(id)}
+                allUsers={this.state.personDatas}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/marked"
+            render={() => (
+              <Cards
+                bookmark={id => this.toggleBookmark(id)}
+                allUsers={this.state.personDatas.filter(
+                  person => person.marked === true
+                )}
+              />
+            )}
           />
         </Wrapper>
       </Router>

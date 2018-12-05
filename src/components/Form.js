@@ -32,7 +32,6 @@ export default class Form extends Component {
       lastName: '',
       age: '',
       gender: '',
-      //dateOfExam: '',
       about: '',
       contact: ''
     }
@@ -42,7 +41,6 @@ export default class Form extends Component {
   lastName = React.createRef()
   age = React.createRef()
   gender = React.createRef()
-  //dateOfExam = React.createRef()
   about = React.createRef()
   contact = React.createRef()
 
@@ -61,7 +59,6 @@ export default class Form extends Component {
     this.lastName.current.value = ''
     this.age.current.value = ''
     this.gender.current.value = ''
-    //this.dateOfExam.current.value = ''
     this.about.current.value = ''
     this.contact.current.value = ''
 

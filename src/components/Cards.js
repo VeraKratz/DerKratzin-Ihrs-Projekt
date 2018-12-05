@@ -16,6 +16,7 @@ export default class Cards extends Component {
             gender={user.gender}
             contact={user.contact}
             about={user.about}
+            handleBookmark={() => this.props.bookmark(user.userId)}
           />
         ))}
       </div>

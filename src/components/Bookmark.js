@@ -8,31 +8,10 @@ library.add(faHeart)
 
 const Heart = styled.div`
   color: grey;
-
-  .svg-inline--fa {
-    height: 3em;
-  }
-  .bInlse .svg-inline--fa {
-    height: 3em;
-  }
-
-  .svg-inline--fa.fa-w-18 {
-    width: 3em;
-  }
   &.marked {
     color: red;
   }
 `
-/*const Wrapper = styled.div`
-  position: absolute;
-  top: -26px;
-  right: 3%;
-  img {
-    height: 31px !important;
-    width: 26px !important;
-    object-fit: cover;
-  }
-`*/
 
 export default class Bookmark extends Component {
   render() {

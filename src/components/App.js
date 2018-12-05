@@ -94,7 +94,7 @@ export default class App extends Component {
               SEGLER
             </StyledNavLink>
             <StyledNavLink exact to="/marked">
-              Meine Kontakte
+              MEINE KONTAKTE
             </StyledNavLink>
           </NavBar>
           <Route exact path="/" render={() => <Home />} />

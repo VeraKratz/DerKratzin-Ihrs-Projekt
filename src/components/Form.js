@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-textarea-autosize'
+import { NavLink } from 'react-router-dom'
 
 const StyledTextarea = styled(Textarea)`
   min-height: 100px;
@@ -105,7 +106,9 @@ export default class Form extends Component {
           placeholder="Erzähl hier was über dich"
           onChange={this.updateInput}
         />
-        <button onClick={this.handleSubmit}>Anlegen</button>
+        <NavLink exact to="/cards">
+          <button onClick={this.handleSubmit}>Anlegen</button>
+        </NavLink>
       </Wrapper>
     )
   }

@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import Card from './Card'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  overflow-y: scroll;
+`
 
 export default class Cards extends Component {
   render() {
     console.log('personData: ' + this.props.allUsers)
     return (
-      <div>
+      <Wrapper>
         {this.props.allUsers.map((user, index) => (
           <Card
             image={user.image}
@@ -20,7 +25,7 @@ export default class Cards extends Component {
             marked={user.marked}
           />
         ))}
-      </div>
+      </Wrapper>
     )
   }
 }

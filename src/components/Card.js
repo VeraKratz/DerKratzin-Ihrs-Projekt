@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Bookmark from './Bookmark'
 const StyledCard = styled.div`
-  height: 350px;
+  min-height: 350px;
   margin: 23px;
   background: white;
   box-shadow: 0 8px 16px rgba(0, 40, 100, 0.4);
@@ -10,13 +10,17 @@ const StyledCard = styled.div`
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
   grid-gap: 10px;
   grid-template-areas:
     'image name'
     '. .'
     'about about'
     'contact .';
+
+  a {
+    text-decoration: none;
+  }
 `
 
 const UserImage = styled.img`
@@ -53,7 +57,9 @@ export default class Card extends Component {
         <span>{this.props.age}</span>
         <span>{this.props.gender}</span>
         <AboutArea>{this.props.about}</AboutArea>
-        <Contact>{this.props.contact}</Contact>
+        <Contact>
+          <a href="mailto:{this.props.contact}">{this.props.contact}</a>
+        </Contact>
       </StyledCard>
     )
   }

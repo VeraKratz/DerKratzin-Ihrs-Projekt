@@ -2,37 +2,16 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import Home from './Home'
-import Cards from './Cards'
+import Sailors from './Sailors'
 import Form from './Form'
 import sailors from '../data/sailors'
+import Navbar from './Navbar'
+import Header from './Header'
 
-const LogoImage = styled.img`
-  height: 85px;
-`
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr 1fr;
-`
-
-const NavBar = styled.nav`
-  background-color: #ebe5e1;
-  box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
-  position: relative;
-  padding: 0 15px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  align-items: center;
-  font-family: 'Text Me One', sans-serif;
-`
-
-const StyledNavLink = styled(NavLink)`
-  margin-right: 10px;
-  text-decoration: overline;
-  color: #4460a9;
-  text-decoration-color: #d03d3d;
-  &.active {
-    color: #d03d3d;
-  }
+  grid-template-rows: 85px auto 30px;
+  height: 100vh;
 `
 
 export default class App extends Component {
@@ -82,21 +61,8 @@ export default class App extends Component {
     return (
       <Router>
         <Wrapper>
-          <NavBar>
-            <LogoImage src="../../img/logo1.png" />
-            <StyledNavLink exact to="/">
-              HOME
-            </StyledNavLink>
-            <StyledNavLink exact to="/form">
-              ANMELDUNG
-            </StyledNavLink>
-            <StyledNavLink exact to="/cards">
-              SEGLER
-            </StyledNavLink>
-            <StyledNavLink exact to="/marked">
-              MEINE KONTAKTE
-            </StyledNavLink>
-          </NavBar>
+          <Header />
+
           <Route exact path="/" render={() => <Home />} />
           <Route
             exact
@@ -105,9 +71,9 @@ export default class App extends Component {
           />
           <Route
             exact
-            path="/cards"
+            path="/sailors"
             render={() => (
-              <Cards
+              <Sailors
                 bookmark={id => this.toggleBookmark(id)}
                 allUsers={this.state.personDatas}
               />
@@ -115,9 +81,9 @@ export default class App extends Component {
           />
           <Route
             exact
-            path="/marked"
+            path="/markedSailors"
             render={() => (
-              <Cards
+              <Sailors
                 bookmark={id => this.toggleBookmark(id)}
                 allUsers={this.state.personDatas.filter(
                   person => person.marked === true
@@ -125,6 +91,7 @@ export default class App extends Component {
               />
             )}
           />
+          <Navbar />
         </Wrapper>
       </Router>
     )

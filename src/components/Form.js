@@ -106,7 +106,7 @@ export default class Form extends Component {
           placeholder="Erzähl hier was über dich"
           onChange={this.updateInput}
         />
-        <NavLink exact to="/cards">
+        <NavLink exact to="/thankyouscreen">
           <button onClick={this.handleSubmit}>Anlegen</button>
         </NavLink>
       </Wrapper>

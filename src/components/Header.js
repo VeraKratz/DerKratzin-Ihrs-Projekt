@@ -14,13 +14,16 @@ const Text = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #4b508c;
 `
 export default class Header extends Component {
   render() {
     return (
       <Wrapper>
         <LogoImage src="../../img/logo1.png" />
-        <Text>Hallo</Text>
+        <Text>
+          <h1>Prüsse App</h1>
+        </Text>
         <div />
       </Wrapper>
     )

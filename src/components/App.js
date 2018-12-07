@@ -7,6 +7,7 @@ import Form from './Form'
 import sailors from '../data/sailors'
 import Navbar from './Navbar'
 import Header from './Header'
+import ThankYouScreen from './Thankyouscreen'
 
 const Wrapper = styled.div`
   display: grid;
@@ -62,7 +63,6 @@ export default class App extends Component {
       <Router>
         <Wrapper>
           <Header />
-
           <Route exact path="/" render={() => <Home />} />
           <Route
             exact
@@ -78,6 +78,11 @@ export default class App extends Component {
                 allUsers={this.state.personDatas}
               />
             )}
+          />
+          <Route
+            exact
+            path="/thankyouscreen"
+            render={() => <ThankYouScreen />}
           />
           <Route
             exact

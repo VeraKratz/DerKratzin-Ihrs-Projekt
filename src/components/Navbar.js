@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 
 const Wrapper = styled.nav`
+  height: 100%;
   background-color: #ebe5e1;
   box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
   position: relative;
   padding: 0 15px;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   font-family: 'Text Me One', sans-serif;
 `

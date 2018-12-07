@@ -22,6 +22,7 @@ export default class Cards extends Component {
             contact={user.contact}
             about={user.about}
             handleBookmark={() => this.props.bookmark(user.userId)}
+            handleDeleteSailor={() => this.props.delete(user.userId)}
             marked={user.marked}
           />
         ))}

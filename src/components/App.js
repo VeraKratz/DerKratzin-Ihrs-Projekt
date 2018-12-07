@@ -11,7 +11,7 @@ import ThankYouScreen from './Thankyouscreen'
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 85px auto 30px;
+  grid-template-rows: 85px auto 40px;
   height: 100vh;
 `
 
@@ -57,6 +57,20 @@ export default class App extends Component {
     })
   }
 
+  deleteSailor = id => {
+    const { personDatas } = this.state
+    const index = personDatas.findIndex(person => person.userId === id)
+    console.log(index)
+    const toggleDone = [
+      ...personDatas.slice(0, index),
+      ...personDatas.slice(index + 1)
+    ]
+
+    this.setState({
+      personDatas: toggleDone
+    })
+  }
+
   render() {
     this.save()
     return (
@@ -75,6 +89,7 @@ export default class App extends Component {
             render={() => (
               <Sailors
                 bookmark={id => this.toggleBookmark(id)}
+                delete={id => this.deleteSailor(id)}
                 allUsers={this.state.personDatas}
               />
             )}

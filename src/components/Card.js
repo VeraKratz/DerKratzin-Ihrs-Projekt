@@ -49,6 +49,10 @@ export default class Card extends Component {
           marked={this.props.marked}
           handleOnClick={this.props.handleBookmark}
         />
+        <Bookmark
+          marked={this.props.marked}
+          handleOnClick={this.props.handleDeleteSailor}
+        />
         <UserImage src={this.props.image} alt="random" />
         <NameArea>
           <div>{this.props.firstName}</div>

@@ -20,10 +20,8 @@ export default class Header extends Component {
   render() {
     return (
       <Wrapper>
+        <div />
         <LogoImage src="../../img/logo1.png" />
-        <Text>
-          <h1>Prüsse App</h1>
-        </Text>
         <div />
       </Wrapper>
     )

@@ -14,7 +14,15 @@ const Wrapper = styled.section`
 
   input {
     border-radius: 5px;
-    padding: 5px;
+    padding: 11px;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 4px;
+    /* border-width: 2px; */
+    border-style: solid;
+    border-color: #4d607f;
+    /* border-image: initial; */
+    /* border-radius: 4px; */
   }
   button {
     height: 50px;

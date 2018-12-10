@@ -14,7 +14,7 @@ const StyledTextarea = styled(Textarea)`
   border-color: #4d607f;
 `
 
-const Wrapper = styled.section`
+const Wrapper = styled.form`
   display: grid;
   grid-gap: 20px;
   margin: 15px 21px;
@@ -28,7 +28,9 @@ const Wrapper = styled.section`
     padding-left: 4px;
     border-width: 2px;
     border-style: solid;
-    border-color: #4d607f;
+    /*border-color: #4d607f;*/
+    border: none;
+    background: #4d607f;
     border-image: initial;
     border-radius: 4px;
   }
@@ -59,14 +61,8 @@ const Wrapper = styled.section`
 
 export default class Form extends Component {
   state = {
-    user: {
-      firstName: '',
-      lastName: '',
-      age: '',
-      gender: '',
-      about: '',
-      contact: ''
-    }
+    completeCard: false,
+    user: {}
   }
 
   firstName = React.createRef()
@@ -76,16 +72,34 @@ export default class Form extends Component {
   about = React.createRef()
   contact = React.createRef()
 
-  updateInput = event => {
-    const input = event.target
+  verifyState() {
+    if (
+      this.state.user.firstName &&
+      this.state.user.lastName &&
+      this.state.user.age &&
+      this.state.user.gender &&
+      this.state.user.about &&
+      this.state.user.contact
+    ) {
+      this.setState({
+        completeCard: true
+      })
+    }
+  }
 
-    this.setState({
-      user: { ...this.state.user, [input.name]: event.target.value }
-    })
+  updateInput = event => {
+    if (event.target) {
+      const input = event.target
+
+      this.setState({
+        user: { ...this.state.user, [input.name]: event.target.value }
+      })
+    }
+    this.verifyState()
   }
 
   handleSubmit = () => {
-    this.props.newCard(this.state.user)
+    this.props.completeCard && this.props.newCard(this.state.user)
 
     this.firstName.current.value = ''
     this.lastName.current.value = ''
@@ -93,7 +107,6 @@ export default class Form extends Component {
     this.gender.current.value = ''
     this.about.current.value = ''
     this.contact.current.value = ''
-
     this.firstName.current.focus()
   }
 
@@ -104,7 +117,7 @@ export default class Form extends Component {
         <h3>Bitte füll das Anmeldeformular vollständig aus</h3>
         <input
           type="text"
-          required
+          required={true}
           ref={this.firstName}
           name="firstName"
           placeholder="Vorname"
@@ -141,7 +154,12 @@ export default class Form extends Component {
           placeholder="Erzähl hier was über dich"
           onChange={this.updateInput}
         />
-        <NavLink exact to="/thankyouscreen">
+        <NavLink
+          exact
+          to={`/thankyouscreen/${
+            this.state.completeCard ? 'complete' : 'incomplete'
+          }`}
+        >
           <button onClick={this.handleSubmit}>Anlegen</button>
         </NavLink>
       </Wrapper>

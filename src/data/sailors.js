@@ -6,8 +6,6 @@ export default [
     lastName: 'Dilliston',
     age: '56',
     gender: 'Female',
-    image:
-      'https://robohash.org/consequaturrerumplaceat.png?size=50x50&set=set1',
     contact: 'mdilliston0@amazon.de',
     about: 'In quis justo. Maecenas rhoncus aliquam lacus.',
     marked: false
@@ -18,8 +16,6 @@ export default [
     lastName: 'Whitney',
     age: '34',
     gender: 'Female',
-    image:
-      'https://robohash.org/omnisexpeditadignissimos.png?size=50x50&set=set1',
     contact: 'gwhitney1@sohu.com',
     about:
       'In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',

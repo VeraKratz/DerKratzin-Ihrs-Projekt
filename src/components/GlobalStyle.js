@@ -19,6 +19,8 @@ body {
  -o-background-size: cover;
  background-size: cover;
  font-family: 'Antic', sans-serif;
+ color: darkgray;
+ 
   /*font-family: 'Text Me One', sans-serif;
   object-fit: cover;*/
 
@@ -29,7 +31,8 @@ body {
   -moz-osx-font-smoothing: grayscale;*/
 }
 p {
-  font-size: 20px;
+  font-size: 19px;
+  line-height: 23px;
 
 }
 `

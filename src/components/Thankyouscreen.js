@@ -32,18 +32,31 @@ export default class Thankyouscreen extends Component {
   render() {
     return (
       <SectionLayout>
-        <Wrapper>
-          <h1>Vielen Dank für Deine Anmeldung ! </h1>
-          <p>
-            Wir freuen uns, Dich in unserer Seglerkartei willkommen zu heißen!
-            Schau Dich am Besten gleich mal nach spannenden SegelpartnerInnen
-            und Segelpartnern in unserer Seglerkatei um. Dazu geht es hier
-            entlang.
+        {this.props.completeCard ? (
+          <Wrapper>
+            <h1>Vielen Dank für Deine Anmeldung ! </h1>
+            <p>Willkommen in unserer Seglerkartei, schön das Du da bist!</p>
+            <p>
+              Schau Dich am Besten gleich mal nach spannenden SegelpartnerInnen
+              und Segelpartnern in unserer Seglerkatei um. Dazu geht es hier
+              entlang.
+            </p>
             <StyledNavLink exact to="/Sailors">
               SEGLER
             </StyledNavLink>
-          </p>
-        </Wrapper>
+          </Wrapper>
+        ) : (
+          <Wrapper>
+            <h1>Hey vielen Dank für den Versuch der Anmeldung ! </h1>
+            <p>
+              Damit es beim nächsten Mal klappt, füll bitte das Formular
+              vollständig aus.
+              <StyledNavLink exact to="/form">
+                ANMELDUNG
+              </StyledNavLink>
+            </p>
+          </Wrapper>
+        )}
       </SectionLayout>
     )
   }

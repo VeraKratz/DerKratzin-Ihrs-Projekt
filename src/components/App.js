@@ -19,6 +19,7 @@ export default class App extends Component {
   state = {
     personDatas: this.load()
   }
+
   save() {
     localStorage.setItem(
       'prüsse-app-sailors',
@@ -35,7 +36,9 @@ export default class App extends Component {
   }
 
   addUser = newUser => {
-    this.setState({ personDatas: [newUser, ...this.state.personDatas] })
+    this.setState({
+      personDatas: [newUser, ...this.state.personDatas]
+    })
   }
 
   renderPersonData = () => {
@@ -96,8 +99,12 @@ export default class App extends Component {
           />
           <Route
             exact
-            path="/thankyouscreen"
-            render={() => <ThankYouScreen />}
+            path="/thankyouscreen/:result"
+            render={({ match }) => (
+              <ThankYouScreen
+                completeCard={match.params.result === 'complete'}
+              />
+            )}
           />
           <Route
             exact

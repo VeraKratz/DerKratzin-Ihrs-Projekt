@@ -8,6 +8,7 @@ library.add(faHeart)
 
 const Heart = styled.div`
   color: grey;
+  grid-area: bookmark;
   &.marked {
     color: red;
   }

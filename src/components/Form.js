@@ -18,6 +18,7 @@ const Wrapper = styled.section`
   display: grid;
   grid-gap: 20px;
   margin: 15px 21px;
+  overflow-y: scroll;
 
   input {
     border-radius: 5px;

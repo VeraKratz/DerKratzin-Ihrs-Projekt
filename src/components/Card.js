@@ -3,24 +3,23 @@ import styled from 'styled-components'
 import Bookmark from './Bookmark'
 
 const StyledCard = styled.div`
-  min-height: 350px;
   margin: 5px;
   background: white;
   box-shadow: 0 8px 16px rgba(0, 40, 100, 0.4);
   border-radius: 4px;
   padding: 20px;
+  word-break: break-all;
   display: grid;
-  grid-template-columns: 20px 30px auto 30px 20px;
-  grid-auto-rows: 25% 30px 30px 25px auto 10%;
-
-  grid-gap: 5px;
+  grid-template-columns: 20px 1fr 1fr 20px;
+  grid-template-rows: 3fr 1fr 1fr 1fr 3fr 1fr;
   grid-template-areas:
-    '. . image . .'
-    '. .name. .'
-    '. . age gender . . '
-    '. . contact . .'
-    '. about about about .'
-    '. . delete bookmark . .';
+    '. image image  .'
+    '.  name name .'
+    '. agegenderarea agegenderarea . '
+    '. contact contact  .'
+    '. about about .'
+    '.  delete bookmark  .';
+  justify-items: center;
 
   a {
     text-decoration: none;
@@ -29,13 +28,12 @@ const StyledCard = styled.div`
 const UserImage = styled.img`
   grid-area: image;
   width: 100px;
-  height: 100px;
+  /* height: 100px; */
   object-fit: cover;
   border-radius: 50%;
 `
 const NameArea = styled.div`
   grid-area: name;
-  margin-right: auto;
 `
 const AboutArea = styled.div`
   grid-area: about;
@@ -51,7 +49,13 @@ export default class Card extends Component {
   render() {
     return (
       <StyledCard>
-        <UserImage src={this.props.image} alt="random" />
+        <UserImage
+          src={
+            this.props.image ||
+            'https://robohash.org/consequaturrerumplaceat.png?size=50x50&set=set1'
+          }
+          alt="nix da"
+        />
         <NameArea>
           <span>{this.props.firstName}</span>
           <span>{this.props.lastName}</span>
@@ -67,6 +71,7 @@ export default class Card extends Component {
         <Bookmark
           marked={this.props.marked}
           handleOnClick={this.props.handleBookmark}
+          gridArea="bookmark"
         />
         <Bookmark
           marked={this.props.marked}

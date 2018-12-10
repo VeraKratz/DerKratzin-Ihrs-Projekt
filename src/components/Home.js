@@ -6,6 +6,7 @@ const SectionLayout = styled.section`
   display: flex;
   align-items: center;
   grid-row-start: 2;
+  overflow-y: scroll;
 `
 
 const Wrapper = styled.div`

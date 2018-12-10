@@ -5,12 +5,19 @@ import { NavLink } from 'react-router-dom'
 
 const StyledTextarea = styled(Textarea)`
   min-height: 100px;
+  border-radius: 5px;
+  padding: 11px;
+  height: 30px;
+  font-size: 14px;
+  padding-left: 4px;
+  border-style: solid;
+  border-color: #4d607f;
 `
 
 const Wrapper = styled.section`
   display: grid;
-  grid-gap: 25px;
-  margin: 70px 20px;
+  grid-gap: 20px;
+  margin: 15px 21px;
 
   input {
     border-radius: 5px;
@@ -18,19 +25,34 @@ const Wrapper = styled.section`
     height: 30px;
     font-size: 14px;
     padding-left: 4px;
-    /* border-width: 2px; */
+    border-width: 2px;
     border-style: solid;
     border-color: #4d607f;
-    /* border-image: initial; */
-    /* border-radius: 4px; */
+    border-image: initial;
+    border-radius: 4px;
   }
   button {
-    height: 50px;
+    height: 35px;
     background: #395e93;
     color: white;
     font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     border-radius: 4px;
-    border: 0;
+    border: 2px solid black;
+  }
+  a {
+    color: navy;
+    text-decoration: none;
+  }
+
+  .checkbox {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 5px;
+  }
+  .gender {
+    display: block;
   }
 `
 
@@ -77,7 +99,11 @@ export default class Form extends Component {
   render() {
     return (
       <Wrapper>
+        <h2>Anmeldung für den Seglerpool</h2>
+        <h3>Bitte füll das Anmeldeformular vollständig aus</h3>
         <input
+          type="text"
+          required
           ref={this.firstName}
           name="firstName"
           placeholder="Vorname"
@@ -101,13 +127,13 @@ export default class Form extends Component {
           placeholder="Geschlecht"
           onChange={this.updateInput}
         />
-
         <input
           ref={this.contact}
           name="contact"
           placeholder="Trage hier bitte deine Mailadresse ein"
           onChange={this.updateInput}
         />
+        <label>Erzähl hier etwas über Dich</label>
         <StyledTextarea
           ref={this.about}
           name="about"

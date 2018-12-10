@@ -11,7 +11,7 @@ import ThankYouScreen from './Thankyouscreen'
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-rows: 85px auto 40px;
+  grid-template-rows: 85px auto 71px;
   height: 100vh;
 `
 

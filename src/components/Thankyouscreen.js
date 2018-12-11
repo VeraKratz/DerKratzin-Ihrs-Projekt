@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   position: relative;
   margin: 23px;
   border-radius: 4px;
+  padding-bottom: 37px;
 `
 
 const StyledNavLink = styled(NavLink)`
@@ -34,11 +35,11 @@ export default class Thankyouscreen extends Component {
       <SectionLayout>
         {this.props.completeCard ? (
           <Wrapper>
-            <h1>Vielen Dank für Deine Anmeldung ! </h1>
-            <p>Willkommen in unserer Seglerkartei !</p>
+            <h1>Vielen Dank für deine Anmeldung! </h1>
+            <p>Willkommen in unserer Seglerkartei!</p>
             <p>
-              Schau Dich am Besten gleich mal nach spannenden SegelpartnerInnen
-              und Segelpartnern um. Dazu geht es hier entlang.
+              Schau dich am besten gleich mal nach spannenden Segelpartnerinnen
+              und Segelpartnern um. Dazu geht es hier entlang:
             </p>
             <StyledNavLink exact to="/Sailors">
               SEGLER
@@ -46,14 +47,14 @@ export default class Thankyouscreen extends Component {
           </Wrapper>
         ) : (
           <Wrapper>
-            <h1>Hey, vielen Dank für den Versuch deiner Anmeldung !</h1>
+            <h1>Hey, schön, dass du dich anmelden möchtest!</h1>
             <p>
               Damit es beim nächsten Mal klappt, füll bitte das Formular
               vollständig aus.
-              <StyledNavLink exact to="/form">
-                ANMELDUNG
-              </StyledNavLink>
             </p>
+            <StyledNavLink exact to="/form">
+              ANMELDUNG
+            </StyledNavLink>
           </Wrapper>
         )}
       </SectionLayout>

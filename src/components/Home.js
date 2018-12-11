@@ -49,23 +49,24 @@ export default class Home extends Component {
         <Wrapper>
           <h1> AHOI ! </h1>
           <p>
-            Hey liebe Segler, stellt Euch vor in Hamburg ist schönes Wetter und
-            ordentlich Wind auf der Alster. Ihr werdet unruhig in Euren Büros
+            Hey liebe Segler, stellt euch vor, in Hamburg ist schönes Wetter und
+            ordentlich Wind auf der Alster. Ihr werdet unruhig in euren Büros
             oder am Frühstückstisch?
-            <p>
-              Ihr denkt Euch: "Nix wie Raus auf die Alster Segeln gehen! Nur Wer
-              hat Zeit? "{' '}
-            </p>
-            <p>Diese Frage beantwortet Euch ab jetzt die Prüsse-App.</p>
-            <p>
-              Checkt in unsere Seglerkartei ein und vernetzt Euch mit Euren
-              Segelpartnern.
-              <p>Hier geht`s lang.</p>
-              <StyledNavLink exact to="/form">
-                ANMELDUNG
-              </StyledNavLink>
-            </p>
           </p>
+          <p>
+            Ihr denkt euch: "Nix wie raus auf die Alster, segeln gehen! Nur: Wer
+            hat Zeit?"
+          </p>
+
+          <p>Diese Frage beantwortet euch ab jetzt die Prüsse-App.</p>
+          <p>
+            Checkt in unsere Seglerkartei ein und vernetzt euch mit euren
+            Segelpartnern.
+          </p>
+          <p>Hier geht's lang.</p>
+          <StyledNavLink exact to="/form">
+            ANMELDUNG
+          </StyledNavLink>
         </Wrapper>
       </SectionLayout>
     )

@@ -52,9 +52,9 @@ export default class Card extends Component {
         <UserImage
           src={
             this.props.image ||
-            `http://source.unsplash.com/random?rand=${Math.random()}`
+            `http://source.unsplash.com/random/600x600?timestamp=${new Date().getTime()}`
           }
-          alt="nix da"
+          alt="Wie Sie sehen, sehen Sie Nichts!"
         />
         <NameArea>
           <span>{this.props.firstName}</span>

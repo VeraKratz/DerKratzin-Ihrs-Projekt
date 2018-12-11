@@ -104,22 +104,22 @@ export default class Form extends Component {
   }
 
   handleSubmit = () => {
-    this.props.completeCard && this.props.newCard(this.state.user)
+    this.state.completeCard && this.props.newCard(this.state.user)
 
-    this.firstName.current.value = ''
-    this.lastName.current.value = ''
-    this.age.current.value = ''
-    this.gender.current.value = ''
-    this.about.current.value = ''
-    this.contact.current.value = ''
-    this.firstName.current.focus()
+    // this.firstName.current.value = ''
+    // this.lastName.current.value = ''
+    // this.age.current.value = ''
+    // this.gender.current.value = ''
+    // this.about.current.value = ''
+    // this.contact.current.value = ''
+    // this.firstName.current.focus()
   }
 
   render() {
     return (
       <Wrapper>
-        <h2>Anmeldung für den Seglerpool</h2>
-        <p>Bitte füll das Anmeldeformular vollständig aus</p>
+        <h2>Anmeldung Seglerkartei</h2>
+        <p>Bitte füll das Anmeldeformular vollständig aus:</p>
         <input
           type="text"
           required={true}
@@ -152,11 +152,11 @@ export default class Form extends Component {
           placeholder="Trage hier bitte deine Mailadresse ein"
           onChange={this.updateInput}
         />
-        <label>Erzähl hier etwas über Dich</label>
+        <label>Erzähl hier etwas über dich:</label>
         <StyledTextarea
           ref={this.about}
           name="about"
-          placeholder="Wer bist Du? Wen Suchst Du?"
+          placeholder="Wer bist du? Wen suchst du?"
           onChange={this.updateInput}
         />
         <NavLink
@@ -165,7 +165,7 @@ export default class Form extends Component {
             this.state.completeCard ? 'complete' : 'incomplete'
           }`}
         >
-          <button onClick={this.handleSubmit}>Anlegen</button>
+          <button onClick={() => this.handleSubmit()}>Anlegen</button>
         </NavLink>
       </Wrapper>
     )

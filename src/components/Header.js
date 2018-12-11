@@ -10,12 +10,12 @@ const Wrapper = styled.div`
 const LogoImage = styled.img`
   height: 85px;
 `
-const Text = styled.div`
+/*const Text = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   color: #4b508c;
-`
+`*/
 export default class Header extends Component {
   render() {
     return (

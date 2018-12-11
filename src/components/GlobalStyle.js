@@ -19,7 +19,8 @@ body {
  -o-background-size: cover;
  background-size: cover;
  font-family: 'Antic', sans-serif;
- color: darkgray;
+ color: #47464a;
+ 
  
   /*font-family: 'Text Me One', sans-serif;
   object-fit: cover;*/

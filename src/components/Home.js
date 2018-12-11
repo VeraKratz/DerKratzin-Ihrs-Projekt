@@ -49,7 +49,7 @@ export default class Home extends Component {
         <Wrapper>
           <h1> AHOI ! </h1>
           <p>
-            Hey liebe Segler, stellt Euch vor in Hamburg it schönes Wetter und
+            Hey liebe Segler, stellt Euch vor in Hamburg ist schönes Wetter und
             ordentlich Wind auf der Alster. Ihr werdet unruhig in Euren Büros
             oder am Frühstückstisch?
             <p>

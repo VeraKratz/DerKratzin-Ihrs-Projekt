@@ -4,6 +4,8 @@ import Textarea from 'react-textarea-autosize'
 import { NavLink } from 'react-router-dom'
 
 const StyledTextarea = styled(Textarea)`
+  font-family: 'Antic', sans-serif;
+  color: #47464a;
   min-height: 100px;
   border-radius: 5px;
   padding: 11px;
@@ -11,30 +13,34 @@ const StyledTextarea = styled(Textarea)`
   font-size: 14px;
   padding-left: 4px;
   border-style: solid;
-  border-color: #4d607f;
+  background: #dbe6f7;
+  border: none;
 `
 
 const Wrapper = styled.form`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   margin: 15px 21px;
   overflow-y: scroll;
 
   input {
-    border-radius: 5px;
+    font-family: 'Antic', sans-serif;
+    color: #47464a;
     padding: 11px;
     height: 30px;
     font-size: 14px;
     padding-left: 4px;
-    border-width: 2px;
+    /*border-width: 2px;
     border-style: solid;
-    /*border-color: #4d607f;*/
+    border-color: #4d607f;*/
     border: none;
-    background: #4d607f;
+    background: #dbe6f7;
     border-image: initial;
     border-radius: 4px;
   }
   button {
+    font-family: 'Antic', sans-serif;
+    color: #47464a;
     height: 35px;
     background: #395e93;
     color: white;
@@ -42,20 +48,19 @@ const Wrapper = styled.form`
     text-transform: uppercase;
     letter-spacing: 1.5px;
     border-radius: 4px;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
   }
   a {
     color: navy;
     text-decoration: none;
   }
-
-  .checkbox {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 5px;
+  h2 {
+    margin: 0px;
   }
-  .gender {
-    display: block;
+  p {
+    margin: 0px;
+    font-size: 19px;
+    line-height: 23px;
   }
 `
 
@@ -114,7 +119,7 @@ export default class Form extends Component {
     return (
       <Wrapper>
         <h2>Anmeldung für den Seglerpool</h2>
-        <h3>Bitte füll das Anmeldeformular vollständig aus</h3>
+        <p>Bitte füll das Anmeldeformular vollständig aus</p>
         <input
           type="text"
           required={true}
@@ -151,7 +156,7 @@ export default class Form extends Component {
         <StyledTextarea
           ref={this.about}
           name="about"
-          placeholder="Erzähl hier was über dich"
+          placeholder="Wer bist Du? Wen Suchst Du?"
           onChange={this.updateInput}
         />
         <NavLink

@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   position: relative;
   margin: 18px;
   border-radius: 4px;
+  padding-bottom: 20px;
 `
 
 const StyledNavLink = styled(NavLink)`
@@ -23,6 +24,8 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: underline;
   color: #4460a9;
   text-decoration-color: #d03d3d;
+  margin-left: 10px;
+  font-size: 17px;
   &.active {
     color: #d03d3d;
     font-family: 'Text Me One', sans-serif;
@@ -47,7 +50,7 @@ export default class Home extends Component {
     return (
       <SectionLayout>
         <Wrapper>
-          <h1> AHOI ! </h1>
+          <h1> AHOI! </h1>
           <p>
             Hey liebe Segler, stellt euch vor, in Hamburg ist schönes Wetter und
             ordentlich Wind auf der Alster. Ihr werdet unruhig in euren Büros
@@ -63,10 +66,12 @@ export default class Home extends Component {
             Checkt in unsere Seglerkartei ein und vernetzt euch mit euren
             Segelpartnern.
           </p>
-          <p>Hier geht's lang.</p>
-          <StyledNavLink exact to="/form">
-            ANMELDUNG
-          </StyledNavLink>
+          <p>
+            Hier geht's lang:
+            <StyledNavLink exact to="/form">
+              ANMELDUNG
+            </StyledNavLink>
+          </p>
         </Wrapper>
       </SectionLayout>
     )

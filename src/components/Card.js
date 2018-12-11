@@ -10,8 +10,9 @@ const StyledCard = styled.div`
   padding: 20px;
   word-break: break-all;
   display: grid;
-  grid-template-columns: 20px 1fr 1fr 20px;
-  grid-template-rows: 3fr 1fr 1fr 1fr 3fr 1fr;
+  grid-gap: 10px;
+  /*grid-template-columns: 20px 1fr 1fr 20px;
+  grid-template-rows: 3fr 1fr 1fr 1fr 3fr 1fr;*/
   grid-template-areas:
     '. image image  .'
     '.  name name .'
@@ -24,7 +25,11 @@ const StyledCard = styled.div`
   a {
     text-decoration: none;
   }
+  .margin {
+    margin-right: 5px;
+  }
 `
+
 const UserImage = styled.img`
   grid-area: image;
   width: 100px;
@@ -57,11 +62,11 @@ export default class Card extends Component {
           alt="Wie Sie sehen, sehen Sie Nichts!"
         />
         <NameArea>
-          <span>{this.props.firstName}</span>
+          <span className="margin">{this.props.firstName}</span>
           <span>{this.props.lastName}</span>
         </NameArea>
         <AgeGenderArea>
-          <span>{this.props.age}</span>
+          <span className="margin">{this.props.age}</span>
           <span>{this.props.gender}</span>
         </AgeGenderArea>
         <AboutArea>{this.props.about}</AboutArea>
@@ -73,10 +78,10 @@ export default class Card extends Component {
           handleOnClick={this.props.handleBookmark}
           gridArea="bookmark"
         />
-        <Bookmark
+        {/* <Bookmark
           marked={this.props.marked}
           handleOnClick={this.props.handleDeleteSailor}
-        />
+        /> */}
       </StyledCard>
     )
   }

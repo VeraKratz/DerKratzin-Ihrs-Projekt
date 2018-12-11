@@ -50,7 +50,7 @@ export default class Home extends Component {
     return (
       <SectionLayout>
         <Wrapper>
-          <h1> AHOI! </h1>
+          <h1> AHOI ! </h1>
           <p>
             Hey liebe Segler, stellt euch vor, in Hamburg ist schönes Wetter und
             ordentlich Wind auf der Alster. Ihr werdet unruhig in euren Büros

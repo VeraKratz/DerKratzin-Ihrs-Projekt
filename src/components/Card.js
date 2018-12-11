@@ -5,14 +5,19 @@ import Bookmark from './Bookmark'
 const StyledCard = styled.div`
   margin: 5px;
   background: white;
-  box-shadow: 0 8px 16px rgba(0, 40, 100, 0.4);
-  border-radius: 4px;
+
   padding: 20px;
   word-break: break-all;
   display: grid;
   grid-gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  padding: 5px 30px 20px;
+  margin: 18px;
+  border-radius: 4px;
   /*grid-template-columns: 20px 1fr 1fr 20px;
   grid-template-rows: 3fr 1fr 1fr 1fr 3fr 1fr;*/
+
   grid-template-areas:
     '. image image  .'
     '.  name name .'

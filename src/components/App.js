@@ -62,14 +62,13 @@ export default class App extends Component {
   deleteSailor = id => {
     const { personDatas } = this.state
     const index = personDatas.findIndex(person => person.userId === id)
-    console.log('delete:' + index)
-    const toggleDone = [
+    const newPersonData = [
       ...personDatas.slice(0, index),
       ...personDatas.slice(index + 1)
     ]
 
     this.setState({
-      personDatas: toggleDone
+      personDatas: newPersonData
     })
   }
 

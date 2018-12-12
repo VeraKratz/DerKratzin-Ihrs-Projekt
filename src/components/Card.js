@@ -16,8 +16,6 @@ const StyledCard = styled.div`
   padding: 5px 30px 20px;
   margin: 18px;
   border-radius: 4px;
-  /*grid-template-columns: 20px 1fr 1fr 20px;
-  grid-template-rows: 3fr 1fr 1fr 1fr 3fr 1fr;*/
 
   grid-template-areas:
     '. image image  .'

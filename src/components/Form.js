@@ -105,14 +105,6 @@ export default class Form extends Component {
 
   handleSubmit = () => {
     this.state.completeCard && this.props.newCard(this.state.user)
-
-    // this.firstName.current.value = ''
-    // this.lastName.current.value = ''
-    // this.age.current.value = ''
-    // this.gender.current.value = ''
-    // this.about.current.value = ''
-    // this.contact.current.value = ''
-    // this.firstName.current.focus()
   }
 
   render() {

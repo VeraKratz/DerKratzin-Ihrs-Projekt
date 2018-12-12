@@ -10,7 +10,7 @@ const Heart = styled.div`
   color: grey;
   grid-area: bookmark;
   &.marked {
-    color: red;
+    color: #d03d3d;
   }
 `
 

@@ -8,7 +8,6 @@ const Wrapper = styled.div`
 
 export default class Cards extends Component {
   render() {
-    console.log('personData: ' + this.props.allUsers)
     return (
       <Wrapper>
         {this.props.allUsers.map((user, index) => (

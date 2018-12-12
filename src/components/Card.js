@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Bookmark from './Bookmark'
+import Delete from './Delete'
 
 const StyledCard = styled.div`
   margin: 5px;
@@ -83,10 +84,12 @@ export default class Card extends Component {
           handleOnClick={this.props.handleBookmark}
           gridArea="bookmark"
         />
-        {/* <Bookmark
+        <Delete
           marked={this.props.marked}
           handleOnClick={this.props.handleDeleteSailor}
-        /> */}
+        >
+          X
+        </Delete>
       </StyledCard>
     )
   }

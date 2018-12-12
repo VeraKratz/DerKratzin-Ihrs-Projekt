@@ -48,7 +48,6 @@ export default class App extends Component {
   toggleBookmark = id => {
     const { personDatas } = this.state
     const index = personDatas.findIndex(person => person.userId === id)
-    console.log(index)
     const toggleDone = [
       ...personDatas.slice(0, index),
       { ...personDatas[index], marked: !personDatas[index].marked },
@@ -63,7 +62,7 @@ export default class App extends Component {
   deleteSailor = id => {
     const { personDatas } = this.state
     const index = personDatas.findIndex(person => person.userId === id)
-    console.log(index)
+    console.log('delete:' + index)
     const toggleDone = [
       ...personDatas.slice(0, index),
       ...personDatas.slice(index + 1)
@@ -112,6 +111,7 @@ export default class App extends Component {
             render={() => (
               <Sailors
                 bookmark={id => this.toggleBookmark(id)}
+                delete={id => this.deleteSailor(id)}
                 allUsers={this.state.personDatas.filter(
                   person => person.marked === true
                 )}
